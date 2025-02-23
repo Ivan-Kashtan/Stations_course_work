@@ -32,4 +32,5 @@ n1 = int(ceil(p_ld_max_w / p_g_))  # число генераторов, рабо
 # n1 = ceil(85/27)
 
 # print(f'{s_g_:.1f}')
+print(f'{s_s_n:.1f}')
 # print(f'{n1:.1f}')

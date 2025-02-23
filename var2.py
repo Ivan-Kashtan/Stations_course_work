@@ -1,5 +1,6 @@
 # – к стороне СН подключено 4 генератора (n1 = 4), к автотрансформаторам связи генераторы не подключены.
-from math import sqrt
+# from math import sqrt, ceil
+from numpy import sqrt, ceil
 
 from gen import cos_g
 from load import *
