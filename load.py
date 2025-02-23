@@ -1,4 +1,4 @@
-from numpy._core._multiarray_umath import ceil
+from numpy import ceil
 
 from in_dat import *
 from gen import q_g, s_g
