@@ -5,7 +5,7 @@ from io import BytesIO
 from svglib.svglib import svg2rlg
 from reportlab.platypus.flowables import Image
 
-def img(t_f):
+def fml(t_f):
     # for i in range(len(t_f)):
     # img = []
     fig = figure(figsize=(0.01, 0.01))

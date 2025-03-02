@@ -1,8 +1,10 @@
 # к стороне СН подключено минимальное число генераторов (n1 = 3), к автотрансформаторам связи генераторы не подключены
-from math import sqrt
+from math import sqrt, ceil
 
 from gen import cos_g
 from load import *
+
+n1_c = n1
 
 p1 = n1 * p_g_ - p_ld_min_sm
 q1 = n1 * q_g_ - q_ld_min_sm
@@ -27,4 +29,4 @@ s_c = max(s1, s2, s3, s4)
 # print(int(ceil(s1)))
 # print(int(ceil(s2)))
 # print(int(ceil(s3)))
-print(int(ceil(s_c)))
+# print(int(ceil(s_c)))

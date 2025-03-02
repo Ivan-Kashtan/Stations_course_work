@@ -1,5 +1,5 @@
 # к стороне СН подключено 3 генератора (n1= 3), к автотрансформаторам связи подключены генераторы.
-from math import sqrt
+from math import sqrt, ceil
 
 from gen import cos_g
 from load import *
@@ -31,7 +31,12 @@ s6 = s_g_
 s_c = max(s1, s2, s3, s4, s5, s6)
 # 1733
 
-# print(int(ceil(s1)))
+# print(int(ceil(p1)))
+# print(int(ceil(q1)))
+#
 # print(int(ceil(s2)))
 # print(int(ceil(s3)))
-print(int(ceil(s_c)))
+# print(int(ceil(s4)))
+# print(int(ceil(s5)))
+# print(int(ceil(s6)))
+# print(int(ceil(s_c)))
