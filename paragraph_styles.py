@@ -52,6 +52,8 @@ st_b_20_5 = ParagraphStyle('ст 2', fontName='times_bold', fontSize=f_s, alignm
                            spaceAfter=5, leading=ldng)
 
 s_b = ParagraphStyle('жирный', fontName="times_bold", fontSize=f_s, alignment=TA_JUSTIFY, spaceAfter=2, leading=ldng)
+st_b_10_2 = ParagraphStyle('st b 10 2', fontName="times_bold", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=10,
+                           spaceAfter=2, leading=ldng)
 st_b_5_0 = ParagraphStyle('жирный', fontName="times_bold", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefpre=5,
                           spaceAfter=3, leading=ldng)
 s_c_b = ParagraphStyle('центр жирный', fontName="times_bold", fontSize=f_s, alignment=TA_CENTER, spaceAfter=3,

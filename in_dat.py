@@ -1,3 +1,5 @@
+from math import pi
+
 # initial data
 # s_s = 2460
 n_g = 7
@@ -17,5 +19,9 @@ cos_ld = 0.8  # k_p power - cos_phi
 u_s = 750  # system
 l_ln = 550
 p_r = 850
+s_sc = 27000  # short circuit
+
+f = 50
+omega = 2*pi*f
 
 # print(s)
