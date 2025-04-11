@@ -1,24 +1,36 @@
-# Расчет ткз
-from numpy import array, sqrt
+# Расчет ткз - исходные данные
+from numpy import array, sqrt, where, empty
 from gen import *
-from in_dat import omega, s_sc
+from in_dat import omega, s_sc, l_ln
 from trnsfm import *
+import line as ln
 
 s_b = 1000
 u_b = array([24, 330, 750])
-# Параметры трансформатора блока
 i_b = s_b / (sqrt(3) * u_b)
-e = 1 + x_d__ * sin_g
+# Генератор
+e_g = 1 + x_d__ * sin_g
 x_g = array([x_d__ * s_b / s_g, x2 * s_b / s_g])
 r_g = x_g[0] / (omega * t_ar)
-
-x_t = u_sc1 / 100 * s_b / s[0]
-r_t = p_sc * s_b / s_t**2
+# Параметры трансформатора блока
+x_t = u_sc_tb / 100 * s_b / s_tb
+r_t = p_sc_tb * s_b / s_tb**2
 # Параметры атвтотрансформатора
-u_sc_at_c = array([0.5*(u_sc_at[1] + u_sc_at[0] - u_sc_at[2]), 0.5*(u_sc_at[1] + u_sc_at[0] - u_sc_at[2]]))
-# Параметры линии
-e_s = 1
-x_s = s_b / s_sc
-r_s = 0
-x_l = x0 * l * s_b / u_b[2]
+#                  В    С   Н
+u_sc_at_c = array([0.5*(u_sc_at[1] + u_sc_at[0] - u_sc_at[2]), 0.5*(u_sc_at[2] + u_sc_at[0] - u_sc_at[1]),
+                   0.5*(u_sc_at[1] + u_sc_at[2] - u_sc_at[0])])
+u_sc_at_c[where(u_sc_at_c < 0)] = 0
 
+x_at = u_sc_at_c / 100 * s_b / s_at
+r_at = p_sc_at * s_b / s_at**2
+n_at = 2
+# Параметры линии
+e_n = 1
+x_n = s_b / s_sc
+r_n = 0
+x_ln = empty([2])
+x_ln[1] = ln.x * l_ln * s_b / u_b[2]**2
+x_ln[0] = 3 * x_ln[1]
+r_l = ln.r * l_ln * s_b / u_b[2]**2
+
+# print(u_sc_at_c)
