@@ -51,15 +51,15 @@ s_f = ParagraphStyle('заголовок формулы', fontName="times", font
 st_b_20_5 = ParagraphStyle('ст 2', fontName='times_bold', fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=20,
                            spaceAfter=5, leading=ldng)
 
-s_b = ParagraphStyle('жирный', fontName="times_bold", fontSize=f_s, alignment=TA_JUSTIFY, spaceAfter=2, leading=ldng)
+st_b = ParagraphStyle('жирный', fontName="times_bold", fontSize=f_s, alignment=TA_JUSTIFY, spaceAfter=2, leading=ldng)
 st_b_10_2 = ParagraphStyle('st b 10 2', fontName="times_bold", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=10,
                            spaceAfter=2, leading=ldng)
 st_b_5_0 = ParagraphStyle('жирный', fontName="times_bold", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefpre=5,
                           spaceAfter=3, leading=ldng)
 s_c_b = ParagraphStyle('центр жирный', fontName="times_bold", fontSize=f_s, alignment=TA_CENTER, spaceAfter=3,
                        spaceBefore=5, leading=ldng)
-st_b_10_2 = ParagraphStyle('ст 15 5 ', fontName='times_bold', fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=10,
-                           spaceAfter=2, leading=ldng)
+# st_b_10_2 = ParagraphStyle('ст 15 5 ', fontName='times_bold', fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=10,
+#                            spaceAfter=2, leading=ldng)
 st_i_0_3 = ParagraphStyle('ст 0 3 i', fontName="times_i", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=0,
                          spaceAfter=3, leading=ldng)
 # st_i_0_1 = ParagraphStyle('ст 0 1 i', fontName="times_i", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=5,

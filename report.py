@@ -30,6 +30,7 @@ sp_15 = Spacer(0, 15)
 sp_20 = Spacer(0, 20)
 sp_1 = Spacer(0, 1 * cm)
 sp_25 = Spacer(0, 25)
+sp_30 = Spacer(0, 30)
 sp_50 = Spacer(0, 50)
 sp_2 = Spacer(0, 2 * cm)
 s_80 = Spacer(0, 80)
@@ -547,7 +548,7 @@ f = [KeepTogether([mn, t_u, un, s_80, kaf, s_80, tp, title, var, s_130, fac, gr,
                'номинальным напряжением 750 кВ составляет 4\u002a400 или 5\u002a240, '
                'фаза с 2-мя и более проводами', st_0_3),
      Paragraph('Предварительно намечаем 3 линии связи', st_0_3),
-     fml(f'$I_{{Л_\u0020 max}} = \\dfrac{{S_C^2}} {{\\sqrt {{3}} \\cdot '
+     fml(f'$I_{{Л_\u0020 max}} = \\dfrac{{S_C^2}} {{\\sqrt {{3}} }} \\cdot '
          f'U_{{ВН_\u0020 ср_\u0020 ном \\cdot \\left( N_л - 1 \\right)}}; \\quad'
          f'I_{{Л_\u0020 max}} = \\dfrac {{{ln.s:.1f}}}  '
          f'{{\\sqrt{{3}} \\cdot {u_s} \\cdot \\left({ln.n_ln} - 1\\right) }} = {ln.i}$ кА'),
