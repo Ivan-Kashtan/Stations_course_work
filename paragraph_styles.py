@@ -50,6 +50,8 @@ s_f = ParagraphStyle('заголовок формулы', fontName="times", font
                      spaceBefore=20, leading=ldng)
 st_b_20_5 = ParagraphStyle('ст 2', fontName='times_bold', fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=20,
                            spaceAfter=5, leading=ldng)
+st_30_30 = ParagraphStyle('ст 30 30', fontName="times", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=30,
+                         spaceAfter=30, leading=ldng)
 
 st_b = ParagraphStyle('жирный', fontName="times_bold", fontSize=f_s, alignment=TA_JUSTIFY, spaceAfter=2, leading=ldng)
 st_b_10_2 = ParagraphStyle('st b 10 2', fontName="times_bold", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=10,
