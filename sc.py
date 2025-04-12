@@ -11,7 +11,7 @@ i_b = s_b / (sqrt(3) * u_b)
 # Генератор
 e_g = 1 + x_d__ * sin_g
 x_g = array([x_d__ * s_b / s_g, x2 * s_b / s_g])
-r_g = x_g / (omega * t_ar)
+r_g = x_g[0] / (omega * t_ar)
 # Параметры трансформатора блока
 x_t = u_sc_tb / 100 * s_b / s_tb
 r_t = p_sc_tb * s_b / s_tb**2
@@ -23,6 +23,7 @@ r_t = p_sc_tb * s_b / s_tb**2
 
 # x_at = u_sc_at_c / 100 * s_b / s_at
 # r_at = p_sc_at * s_b / s_at**2
+#              В    С   Н
 x_at = array([59.1, 0, 98.5])
 r_at = array([0.49, 0.49, 1.36])
 n_at = 2

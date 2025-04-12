@@ -14,9 +14,9 @@ x_e1 = x_b[:, 0] * x_b[:, 2] / (x_b[:, 0] + x_b[:, 2])
 x_e2 = x_n_e * x_b[:, 2] / (x_n_e + x_b[:, 2])
 x_s = x_e1 * (x_at_e + x_e2) / (x_e1 + x_at_e + x_e2)
 
-r_b = array([(r_g[0] + r_t[0])/n1_c, (r_g[0] + r_t[0]), ((r_g[0]+r_at[0])/ n_at)])
+r_b = array([(r_g + r_t[0])/n1_c, (r_g + r_t[0]), ((r_g + r_at[0])/ n_at)])
 r_n_e = r_ln / ln.n_ln + r_n
-r_at_e = r_at / n_at
+r_at_e = r_at[0] / n_at
 r_e1 = r_b[0] * r_b[2] / (r_b[0] + r_b[2])
 r_e2 = r_n_e * r_b[2] / (r_n_e + r_b[2])
 r_s = r_e1 * (r_at_e + r_e2) / (r_e1 + r_at_e + r_e2)
