@@ -10,14 +10,14 @@ from paragraph_styles import *
 # from report import sp_15, sp_20, sp_25, sp_30
 
 from in_dat import n_g
-from sc1 import *
+from sc1_var2 import *
 from load import p_g_,q_g_, p_ld_min_sm
 from line import *
 doc = SimpleDocTemplate(
     'sc1.pdf',
     pagesize=A4,
-    rightMargin=1 * cm, leftMargin=3 * cm,
-    topMargin=1 * cm, bottomMargin=1.5 * cm, title='кз К1 РУСН')
+    rightMargin=1*cm, leftMargin=3*cm,
+    topMargin=1*cm, bottomMargin=1.5*cm, title='кз К1 РУСН')
 
 sp_20 = Spacer(0, 20)
 sp_1 = Spacer(0, 1 * cm)
@@ -104,29 +104,29 @@ f = [Paragraph('Расчет токов короткого замыкания', 
      fml(f'$x_{{Б_\u0020 21}} = x_{{г1}} + x_{{т}}; \\quad'
          f'x_{{Б_\u0020 21}} = {x_g[0]:.3f} + {x_t[0]:.3f} = {x_b[0, 1]:.3f}$'),
      sp_30,
-     fml(f'$x_{{Б_\u0020 31}} = \\dfrac {{x_{{г1}} + x_{{АТ_\u0020 Н}} }} {{2}}; \\quad'
-         f'x_{{Б_\u0020 31}} = \\dfrac {{{x_g[0]:.3f} + {x_at[2]:.3f} }} {{{n_at}}} = {x_b[0, 1]:.3f}$'),
-     sp_30,
+     # fml(f'$x_{{Б_\u0020 31}} = \\dfrac {{x_{{г1}} + x_{{АТ_\u0020 Н}} }} {{2}}; \\quad'
+     #     f'x_{{Б_\u0020 31}} = \\dfrac {{{x_g[0]:.3f} + {x_at[2]:.3f} }} {{{n_at}}} = {x_b[0, 1]:.3f}$'),
+     # sp_30,
      fml(f'$x_{{с_\u0020 э1}} = \\dfrac {{x_{{л1}} }} {{n_л}} + x_с; \\quad'
          f'x_{{с_\u0020 э1}} = \\dfrac {{{x_ln[1]:.5f} }} {{{n_ln}}} + {x_n:.3f}= {x_n_e[1]:.3f}$'),
      sp_30,
      fml(f'$x_{{АТ_\u0020 э1}} = \\dfrac {{x_{{АТ_\u0020 В}} }} {{n_{{АТ}} }}; \\quad'
          f'x_{{АТ_\u0020 э1}} = \\dfrac {{ {x_at[0]:.3f} }} {{{n_at}}} = {x_at_e:.3f}$'),
      sp_30,
-     fml(f'$x_{{э_\u0020 11}} = \\dfrac {{x_{{Б_\u0020 11}} x_{{Б_\u0020 31}} }} '
-         f'{{x_{{Б_\u0020 11}} + x_{{Б_\u0020 31}} }}; \\quad'
-         f'x_{{АТ_\u0020 э1}} = \\dfrac {{ {x_b[0, 0]:.3f} \\cdot {x_b[0, 2]:.3f} }} {{{x_b[0, 0]:.3f} + '
-         f'{x_b[0, 2]:.3f} }} = {x_e1[0]:.3f}$'),
-     sp_30,
-     fml(f'$x_{{э_\u0020 21}} = \\dfrac {{x_{{с_\u0020 э1}} x_{{Б_\u0020 21}} }} '
+     # fml(f'$x_{{э_\u0020 1}} = \\dfrac {{x_{{Б_\u0020 11}} x_{{Б_\u0020 31}} }} '
+     #     f'{{x_{{Б_\u0020 1}} + x_{{Б_\u0020 31}} }}; \\quad'
+     #     f'x_{{АТ_\u0020 э1}} = \\dfrac {{ {x_b[0, 0]:.3f} \\cdot {x_b[0, 2]:.3f} }} {{{x_b[0, 0]:.3f} + '
+     #     f'{x_b[0, 2]:.3f} }} = {x_e1[0]:.3f}$'),
+     # sp_30,
+     fml(f'$x_{{э_\u0020 1}} = \\dfrac {{x_{{с_\u0020 э1}} x_{{Б_\u0020 21}} }} '
          f'{{x_{{с_\u0020 э1}} + x_{{Б_\u0020 21}} }}; \\quad'
-         f'x_{{э_\u0020 21}} = \\dfrac {{ {x_b[0, 0]:.3f} \\cdot {x_b[0, 2]:.3f} }} '
-         f'{{{x_b[0, 0]:.3f} + {x_b[0, 2]:.3f} }} = {x_e2[0]:.3f}$'),
+         f'x_{{э_\u0020 1}} = \\dfrac {{ {x_n_e:.3f} \\cdot {x_b[0, 1]:.3f} }} '
+         f'{{{x_n_e:.3f} + {x_b[0, 1]:.3f} }} = {x_e:.3f}$'),
      sp_30,
-     fml(f'$x_{{К1_\u2211}} = \\dfrac {{ x_{{э_\u0020 11}} \\left( x_{{АТ_\u0020 э1}} + x_{{Б_\u0020 21}} \\right) }} '
+     fml(f'$x_{{К1_\u2211}} = \\dfrac {{ x_{{Б_\u0020 11}} \\left( x_{{АТ_\u0020 э1}} + x_{{Б_\u0020 21}} \\right) }} '
          f'{{x_{{э_\u0020 11}} x_{{АТ_\u0020 э1}} + x_{{Б_\u0020 21}} }}; \\quad'
-         f'x_{{К1_\u2211}} = \\dfrac {{ {x_e1[0]:.3f} \\cdot \\left( {x_at_e:.3f} + {x_e2[0]:.3f} \\right)}} '
-         f'{{ {x_e1[0]:.3f} + {x_at_e:.3f} + {x_e2[0]:.3f} }} = {x_s[0]:.3f}$'),
+         f'x_{{К1_\u2211}} = \\dfrac {{ {x_b[0, 0]:.3f} \\cdot \\left( {x_at_e:.3f} + {x_e[0, 0]:.3f} \\right)}} '
+         f'{{ {x_b[0, 0]:.3f} + {x_at_e:.3f} + {x_e[0]:.3f} }} = {x_s[0]:.3f}$'),
 
      Paragraph('Активное сопротивление', style=st_20_20),
      fml(f'$r_{{Б_\u0020 1}} = \\dfrac {{r_г + r_т}} {{n_1}}; \\quad'
