@@ -158,7 +158,6 @@ f = [Paragraph('Расчет токов короткого замыкания', 
          f'{{r_{{э_\u0020 1}} r_{{АТ_\u0020 э}} + r_{{Б_\u0020 2}} }}; \\quad'
          f'r_{{К1_\u2211}} = \\dfrac {{ {r_e1:.3f} \\cdot \\left( {r_at_e:.3f} + {r_e2:.3f} \\right)}} '
          f'{{ {r_e1:.3f} + {r_at_e:.3f} + {r_e2:.3f} }} = {r_s:.3f}$'),
-
      ]
 
 doc.build(f, onLaterPages=addPageNumber)

@@ -20,8 +20,8 @@ p3 = p_ld_max_w - (n1_c - 1)*p_g_ + p_s_n
 q3 = q_ld_max_w - (n1_c - 1)*q_g_ + q_s_n
 s3 = sqrt(p3**2 + q3**2) / 2
 
-p4 = p_ld_max_s - (n1_c - 2)*p_g_ + 2*p_s_n
-q4 = q_ld_max_s - (n1_c - 2)*q_g_ + 2*q_s_n
+p4 = p_ld_min_sm - (n1_c - 2)*p_g_ + 2*p_s_n
+q4 = q_ld_min_sm - (n1_c - 2)*q_g_ + 2*q_s_n
 s4 = sqrt(p3**2 + q3**2) / 2
 
 s_c = max(s1, s2, s3, s4)

@@ -7,7 +7,7 @@ from reportlab.lib import colors
 from eq import fml
 from page_number import addPageNumber
 from paragraph_styles import *
-from report import sp_15, sp_20, sp_25
+# from report import sp_15, sp_20, sp_25
 
 from gen import tg_g
 from var2 import *
@@ -17,6 +17,10 @@ doc = SimpleDocTemplate(
     pagesize=A4,
     rightMargin=1 * cm, leftMargin=3 * cm,
     topMargin=1 * cm, bottomMargin=1.5 * cm, title='2-й вариант схемы')
+
+sp_15 = Spacer(0, 15)
+sp_20 = Spacer(0, 20)
+sp_25 = Spacer(0, 25)
 
 f = [Paragraph('Вариант 2', style=st_i_10_5),
      Paragraph('К стороне СН подключено 4 генератора, к автотрансформаторам связи генераторы не подключены.',
@@ -34,7 +38,8 @@ f = [Paragraph('Вариант 2', style=st_i_10_5),
          f'Q_1 = {n1_c} \\cdot {q_g_:.1f} - {q_ld_min_sm:.1f} = {q1:.1f}$ МВар'),
      sp_20,
      fml(f'$S_{{АТ_\u0020 1_\u0020расч}} = \\dfrac {{1}} {{2}} \\sqrt {{P_1^2 + Q_1^2}}; \\quad'
-         f'S_{{АТ_\u0020 1_\u0020расч}} = \\dfrac{{\\sqrt{{\\left({p1:.1f} ^ 2 + {q1:.1f} ^ 2\\right)}} {{2}} = {s1:.1f}$ МВ\u00B7А'),
+         f'S_{{АТ_\u0020 1_\u0020расч}} = \\dfrac{{ \\sqrt{{ \\left({p1:.1f} ^ 2 + {q1:.1f} ^ 2\\right)}} }} {{2}} = '
+         f'{s1:.1f}$ МВ\u00B7А'),
      sp_15,
      fml(f'$S_{{АТ_\u0020 1_\u0020ном}} \u2265 S_{{АТ_\u0020 1_\u0020расч}}$'),
 
@@ -70,15 +75,15 @@ f = [Paragraph('Вариант 2', style=st_i_10_5),
      Paragraph('Аварийное отключение одного из генераторов (блоков) на стороне СН (ГРУ) в режиме летнего минимума '
                'нагрузки во время планового ремонта другого блока на стороне СН', style=st_0_10),
      fml(f'$P_4 = P_{{нг_\u0020л_\u0020max}} - \\left (N_1 - 2 \\right) {{P\'}}_{{г_\u0020ном}} + 2 P_{{с.н.}}; \\quad '
-         f'P_4 = {p_ld_max_s:.1f} - {n1_c - 2} \\cdot {p_g_:.1f} + 2 \\cdot {p_s_n:.1f} = {p4:.1f}$ МВт'),
+         f'P_4 = {p_ld_min_sm:.1f} - \\right( {n1_c} - 2 \\left ) \\cdot {p_g_:.1f} + 2 \\cdot {p_s_n:.1f} = {p4:.1f}$ МВт'),
      sp_15,
      fml(f'$Q_4 = Q_{{нг_\u0020 л_\u0020 max}} - \\left (N_1 - 2 \\right) '
          f'{{Q\'}}_{{г_\u0020 ном}} + 2Q_{{с.н.}}; \\quad'
          f'Q_4 = {q_ld_max_w:.1f} - {n1_c - 2} \\cdot {q_g_:.1f} + {q_s_n:.1f} = {q3:.1f}$ МВар'),
      sp_20,
-     fml(f'$S_{{АТ_\u0020 4_\u0020 расч}} = \\dfrac {{1}} {{2}} \\sqrt{{P_4^2 + Q_4^2}}; \\quad'
+     fml(f'$S_{{АТ_\u0020 4_\u0020 расч}} = \\dfrac {{ \\sqrt{{P_4^2 + Q_4^2}} }} {{2}}; \\quad'
          f'S_{{АТ_\u0020 4_\u0020 расч}} = \u221a({p4:.1f}^2 + {q4:.1f}^2) \\div {2} = {s4:.1f}$ МВ\u00B7А'),
-     sp_15,
+     sp_20,
      fml(f'$S_{{АТ_\u0020 4_\u0020ном}} \u2265 S_{{АТ_\u0020 4_\u0020расч}}$'),
      # Paragraph('Автотрансформаторы связи выбирается по режиму с наибольшим перетоком мощности', st_10_3),
      # Paragraph('Выбираем с. 241 Файбисович', st_0_3),

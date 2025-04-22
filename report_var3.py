@@ -7,7 +7,7 @@ from reportlab.lib import colors
 from eq import fml
 from page_number import addPageNumber
 from paragraph_styles import *
-from report import sp_15, sp_20, sp_25
+# from report import sp_15, sp_20, sp_25
 
 from gen import tg_g
 from var3 import *
@@ -18,17 +18,21 @@ doc = SimpleDocTemplate(
     rightMargin=1 * cm, leftMargin=3 * cm,
     topMargin=1 * cm, bottomMargin=1.5 * cm, title='3-й вариант схемы')
 
+sp_15 = Spacer(0, 15)
+sp_20 = Spacer(0, 20)
+sp_25 = Spacer(0, 25)
+
 f = [Paragraph('Вариант 3', style=st_i_10_5),
      Paragraph('К стороне СН подключено 3 генератора, к автотрансформаторам связи подключены 2 генератора',
                style=st_0_10),
-     Image(r'C:\Users\kasht\Documents\Учёба\6 семестр\Станции\Курсовая\Компас\Схемы\3 вар. из примера.png',
+     Image(r'C:\Users\kasht\Documents\Учёба\6 семестр\Станции\Курсовая\Компас\Схемы\3 вар. из примера 2.png',
            width=15*cm, height=10*cm, kind='proportional'),
      Paragraph('Рис. 3 - 3 вариант структурной схемы КЭС', style=s_c_t),
      # Paragraph('Выбор автотрансформаторов связи', style=st_0_10),
      Paragraph('Режим 1', style=st_i_0_3),
      Paragraph('Передача максимального перетока избыточной мощности из стороны СН в сеть РУВН:', style=st_0_25),
      fml(f'$P_1 = \\dfrac {{P_{{изб_\u0020max}}}} {{2}} + {{P\'}}_{{г_\u0020ном.}}; \\quad'
-         f'P_1 = {n1_c} \\cdot {p_g_:.1f} - {p_ld_min_sm:.1f} = {p1:.1f}$ МВт'),
+         f'P_1 = \\dfrac {{{p1:.1f}}} {{2}} + {{{p_g:.1f}}}; = {p1:.1f}$ МВт'),
      sp_15,
      fml(f'$Q_1 = Q_{{изб_\u0020max}} = N_1 {{Q\'}}_{{Г_\u0020 ном.}} - Q_{{нг_\u0020л_\u0020min}}; \\quad'
          f'Q_1 = {n1_c} \\cdot {q_g_:.1f} - {q_ld_min_sm:.1f} = {q1:.1f}$ МВар'),
@@ -41,7 +45,8 @@ f = [Paragraph('Вариант 3', style=st_i_10_5),
      Paragraph('Режим 2', style=st_i_10_2),
      Paragraph('Аварийное отключение одного из автотрансформаторов связи при максимальном избытке мощности '
                'на стороне СН', style=st_0_10),
-     fml(f'$P_2 = P_{{изб_\u0020max}} - P_{{ав._\u0020рез.}}; \\quad P_2 = {p1:.1f} - {p_r} = {p2:.1f}$ МВт'),
+     fml(f'$P_2 = P_{{изб_\u0020max}} + 2 P\'_{{г_\u0020 ном}} - P_{{ав._\u0020рез.}}; \\quad P_2 = {p1:.1f} + 2\\cdot '
+         f'{p_g_}- {p_r} = {p2:.1f}$ МВт'),
      sp_15,
      fml(f'$Q_2 = Q_{{изб_\u0020max}} - P_{{ав._\u0020рез.}} \\tan(\\phi_{{г_\u0020ном}}); \\quad'
          f'Q_2 = {q1:.1f} - {p_r:.1f} \\cdot {tg_g:.2f} = {q2:.1f}$ МВар'),

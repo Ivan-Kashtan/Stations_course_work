@@ -7,10 +7,14 @@ from reportlab.lib import colors
 from eq import fml
 from page_number import addPageNumber
 from paragraph_styles import *
-from report import sp_15, sp_20, sp_25
+# from report import sp_15, sp_20, sp_25
 
 from gen import tg_g
 from var1 import *
+
+sp_15 = Spacer(0, 15)
+sp_20 = Spacer(0, 20)
+sp_25 = Spacer(0, 25)
 
 doc = SimpleDocTemplate(
     'var1.pdf',
@@ -18,7 +22,7 @@ doc = SimpleDocTemplate(
     rightMargin=1 * cm, leftMargin=3 * cm,
     topMargin=1 * cm, bottomMargin=1.5 * cm, title='1-й вариант структурой схемы')
 
-f = [Paragraph('Выбор варианта структурной схемы', style=s_b),
+f = [Paragraph('Выбор варианта структурной схемы', style=st_b),
      Paragraph('Минимальное число блоков, подключенных к РУСН для питания потребителей', style=st_0_20),
      fml(f'$N_{{1_\u0020min}} = \\dfrac {{S_{{нг_\u0020max_\u0020з}}}} {{S\'_{{Г_\u0020ном}}}}; \\quad '  # {{\u0020 ном.}}
          f'N_{{1_\u0020min}} = \\dfrac {{{s_ld_max_w:.1f}}} {{{s_g_:.1f}}} = {n1_:.1f} \u2248 {n1}$'),

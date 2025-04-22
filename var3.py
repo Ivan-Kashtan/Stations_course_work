@@ -10,6 +10,7 @@ n1_c = 3
 p1 = var1.p1 / 2 + p_g
 q1 = var1.q1 / 2 + q_g
 s1 = sqrt(p1**2 + q1**2) / 2
+# p1 = var1.p1
 
 p2 = var1.p1 + 2*p_g - p_r
 q2 = var1.q1 + 2*p_g - p_r
