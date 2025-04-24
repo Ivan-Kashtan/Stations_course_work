@@ -5,12 +5,23 @@ from reportlab.lib.units import cm
 from reportlab.lib import colors
 
 from eq import fml
-from page_number import addPageNumber
+# from page_number import addPageNumber
 from paragraph_styles import *
 # from report import sp_15, sp_20, sp_25
 
 from gen import tg_g
 from var1 import *
+
+def p_n(canvas, doc):
+    """
+    Add the page number
+    """
+    page_num = canvas.getPageNumber()
+    text = str(page_num - 1)
+    # canvas.drawRightString(20*cm, 2*cm, text)
+    # canvas.textsize = 12
+    # canvas.fonts = 'Times-Roman'
+    canvas.drawString(12*cm, 1*cm, text)
 
 sp_15 = Spacer(0, 15)
 sp_20 = Spacer(0, 20)
@@ -76,12 +87,12 @@ f = [Paragraph('Выбор варианта структурной схемы', 
      Paragraph('Режим 4', style=st_i_5_2),
      Paragraph('Аварийное отключение одного из генераторов (блоков) на стороне СН (ГРУ) в режиме летнего минимума '
                'нагрузки во время планового ремонта другого блока на стороне СН', style=st_0_10),
-     fml(f'$P_4 = P_{{нг_\u0020л_\u0020max}} - \\left (N_1 - 2 \\right) {{P\'}}_{{г_\u0020ном}} + 2 P_{{с.н.}}; \\quad '
-         f'P_4 = {p_ld_max_s:.1f} - {n1 - 2} \\cdot {p_g_:.1f} + 2 \\cdot {p_s_n:.1f} = {p4:.1f}$ МВт'),
+     fml(f'$P_4 = P_{{нг_\u0020з_\u0020max}} - \\left (N_1 - 2 \\right) {{P\'}}_{{г_\u0020ном}} + 2 P_{{с.н.}}; \\quad '
+         f'P_4 = {p_ld_min_sm:.1f} - {n1 - 2} \\cdot {p_g_:.1f} + 2 \\cdot {p_s_n:.1f} = {p4:.1f}$ МВт'),
      sp_15,
-     fml(f'$Q_4 = Q_{{нг_\u0020 л_\u0020 max}} - \\left (N_1 - 2 \\right) '
+     fml(f'$Q_4 = Q_{{нг_\u0020 з_\u0020 max}} - \\left (N_1 - 2 \\right) '
          f'{{Q\'}}_{{г_\u0020 ном}} + 2Q_{{с.н.}}; \\quad'
-         f'Q_4 = {q_ld_max_w:.1f} - {n1 - 2} \\cdot {q_g_:.1f} + {q_s_n:.1f} = {q3:.1f}$ МВар'),
+         f'Q_4 = {q_ld_min_sm:.1f} - {n1 - 2} \\cdot {q_g_:.1f} + {q_s_n:.1f} = {q4:.1f}$ МВар'),
      sp_25,
      fml(f'$S_{{АТ_\u0020 4_\u0020 расч}} = \\dfrac {{\\sqrt{{P_4^2 + Q_4^2}}}} {{2}}; \\quad'
          f'S_{{АТ_\u0020 4_\u0020 расч}} = \u221a({p4:.1f}^2 + {q4:.1f}^2) \\div {2} = {s4:.1f}$ МВ\u00B7А'),
@@ -91,4 +102,4 @@ f = [Paragraph('Выбор варианта структурной схемы', 
      Paragraph('Выбираем 7×АОДЦТН-333000/750/330 с номинальным напряжением обмотки НН 15,75 кВ', st_0_3),  # с. 241 Файбисович, 162 Неклепаев
      ]
 
-doc.build(f, onLaterPages=addPageNumber)
+doc.build(f, onLaterPages=p_n)

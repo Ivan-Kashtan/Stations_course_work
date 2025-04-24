@@ -36,4 +36,4 @@ x_ln[0] = ln.x * l_ln * s_b / u_b[2]**2
 x_ln[1] = 3 * x_ln[1]
 r_ln = ln.r * l_ln * s_b / u_b[2]**2
 
-# print(x_at)
+print(x_at)

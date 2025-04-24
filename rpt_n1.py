@@ -28,7 +28,7 @@ def p_n(canvas, doc):
 
 # styles = getSampleStyleSheet()
 doc = SimpleDocTemplate(
-    'report1.pdf',
+    'rpt1.pdf',
     pagesize=A4,
     rightMargin=1*cm, leftMargin=3*cm,
     topMargin=1*cm, bottomMargin=1.5*cm, title='Проектирование электрической части КЭС 5600 МВт')

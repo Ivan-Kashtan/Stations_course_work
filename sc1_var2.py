@@ -10,6 +10,7 @@ from in_dat import n_g
 # x[0] - прямая последовательность, x[1] - обратная
 x_b = array([[(x_g[0]+x_t[0]) / n1_c, (x_g[0]+x_t[0]) / (1-n1_c)],
             [(x_g[1]+x_t[0]) / n1_c, (x_g[1]+x_t[0]) / (1-n1_c)]])
+
 x_n_e = x_ln / ln.n_ln + x_n
 # Зачастую x[1] == x[0] == x
 x_at_e = x_at[0] / n_at
