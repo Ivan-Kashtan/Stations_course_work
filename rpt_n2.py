@@ -124,4 +124,4 @@ f = [Paragraph('Мощности нагрузок потребителей', sty
      'стороны ВН 24 кВ, а стороны НН - 6,3 кВ', st_5_5),
      ]
      # с. 134 Неклепаев
-doc.build(f, onLaterPages=p_n)
+doc.build(f, onFirstPage=p_n, onLaterPages=p_n)
