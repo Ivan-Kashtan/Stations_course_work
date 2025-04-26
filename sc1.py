@@ -8,8 +8,10 @@ from in_dat import n_g
 
 # '''
 # x[0] - прямая последовательность, x[1] - обратная
-x_b = array([[(x_g[0] + x_t[0]) / n1_c, x_g[0] + x_t[0], (x_g[0] + x_at[2]) / n_at],
-            [(x_g[1] + x_t[0]) / n1_c, x_g[1] + x_t[0], (x_g[1] + x_at[2]) / n_at]])
+# x_b = array([[(x_g[0] + x_t[0]) / n_b[0], (x_g[0] + x_t[0]) / n_b[1], (x_g[0] + x_at[2]) / n_b[2]],
+#             [(x_g[1] + x_t[0]) / n_b[0], (x_g[1] + x_t[0]) / n_b[1], (x_g[1] + x_at[2]) / n_b[2]]])
+x_b = array([[(x_g[0] + x_t[0]) / n_b[0], 0, (x_g[0] + x_at[2]) / n_b[2]],
+            [(x_g[1] + x_t[0]) / n_b[0], 0, (x_g[1] + x_at[2]) / n_b[2]]])
 x_n_e = x_ln / ln.n_ln + x_n
 # Зачастую x[1] == x[0] == x
 x_at_e = x_at[0] / n_at
@@ -35,10 +37,11 @@ x_s1 = x_e11 * (x_at_e + x_e21) / (x_e11 + x_at_e + x_e21)
 
 
 # нулевая последовательность
-x_b_0 = array([x_t[0] / n1_c, x_t[0], x_at[0] / n_at])
+# x_b_0 = array([x_t[0], x_t[0], x_at[0] / n_at])
+x_b_0 = array([x_t[0]/ n_b[0], 0, x_at[0] / n_b[2]])
 x_n_e_0 = x_ln[0] / ln.n_ln + x_n
 x_at_e_0 = x_at[0] / n_at
-x_e1_0 = x_at_e_0 + (x_n_e_0 * x_b_0[2]) / (x_n_e_0 + x_b_0[2])
+x_e1_0 = x_at_e_0 + (x_n_e_0 * x_b_0[1]) / (x_n_e_0 + x_b_0[1])
 x_e2_0 = x_e1_0 * x_b_0[2] / (x_e1_0 + x_b_0[2])
 x_s_0 = x_b_0[0] * x_e2_0 / (x_b_0[0] + x_e2_0)
 '''
@@ -57,9 +60,10 @@ x_e2 = array([x_e1[0] * x_b[0, 2] / (x_e1[0] + x_b[0, 2]), x_n_e[0] * x_b[1, 2] 
 # x_s = array([x_e1[1] * (x_at_e + x_e2) / (x_e1 + x_at_e + x_e2)])
 '''
 
-r_b = array([(r_g + r_t[0])/n1_c, (r_g + r_t[0]), ((r_g + r_at[0])/ n_at)])
+r_b = array([(r_g + r_t[0]) / n_b[0], 0, (r_g + r_at) / n_b[2]])
+# r_b = array([(r_g + r_t[0]), (r_g + r_t[0]), ((r_g + r_at)/ n_at)])
 r_n_e = r_ln / ln.n_ln + r_n
-r_at_e = r_at[0] / n_at
+r_at_e = r_at / n_at
 r_e1 = r_b[0] * r_b[2] / (r_b[0] + r_b[2])
 r_e2 = r_n_e * r_b[2] / (r_n_e + r_b[2])
 r_s = r_e1 * (r_at_e + r_e2) / (r_e1 + r_at_e + r_e2)
@@ -75,4 +79,4 @@ I_sc_1 = 3 * e_s / (sum(x_s) + x_s_0) * i_b[1]
 
 # x = 1
 
-print(I_sc_1)
+print(x_b)

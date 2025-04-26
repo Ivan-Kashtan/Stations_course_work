@@ -44,6 +44,10 @@ st_10_3 = ParagraphStyle('ст 10 3', fontName='times', fontSize=f_s, alignment=
                          spaceAfter=3, leading=ldng)
 st_20_20 = ParagraphStyle('ст 20 20', fontName="times", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=20,
                          spaceAfter=20, leading=ldng)
+st_10_20 = ParagraphStyle('ст 20 20', fontName="times", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=10,
+                         spaceAfter=20, leading=ldng)
+st_20_10 = ParagraphStyle('ст 20 20', fontName="times", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=20,
+                         spaceAfter=10, leading=ldng)
 st_20_0 = ParagraphStyle('ст 2', fontName="times", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=20,
                          leading=ldng)
 s_f = ParagraphStyle('заголовок формулы', fontName="times", fontSize=f_s, alignment=TA_JUSTIFY, spaceAfter=30,
@@ -78,6 +82,14 @@ st_i_5_5 = ParagraphStyle('ст 5 5 i', fontName="times_i", fontSize=f_s, alignm
 st_i_10_5 = ParagraphStyle('ст 10 5 i', fontName="times_i", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=10,
                          spaceAfter=5, leading=ldng)
 st_i_10_2 = ParagraphStyle('ст 10 2 i', fontName="times_i", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=10,
+                         spaceAfter=5, leading=ldng)
+st_i_10_20 = ParagraphStyle('ст 10 20 i', fontName="times_i", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=10,
+                         spaceAfter=20, leading=ldng)
+st_i_10_10 = ParagraphStyle('ст 10 20 i', fontName="times_i", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=10,
+                         spaceAfter=10, leading=ldng)
+st_i_20_10 = ParagraphStyle('ст 20 10 i', fontName="times_i", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=20,
+                         spaceAfter=10, leading=ldng)
+st_i_20_5 = ParagraphStyle('ст i 20 5', fontName="times_i", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=20,
                          spaceAfter=5, leading=ldng)
 st_i_5_2 = ParagraphStyle('ст 5 2 i', fontName="times_i", fontSize=f_s, alignment=TA_JUSTIFY, spaceBefore=5,
                          spaceAfter=2, leading=ldng)
